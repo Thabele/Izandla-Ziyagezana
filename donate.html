@@ -1,61 +1,165 @@
-<!-- Navigation Links on Right -->
-<div class="flex-1 flex justify-end">
-    <div class="hidden md:flex items-center space-x-8">
-        <a href="#home" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
-            <span class="relative z-10">Home</span>
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#about" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
-            <span class="relative z-10">About</span>
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#programs" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
-            <span class="relative z-10">Programs</span>
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#gallery" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
-            <span class="relative z-10">Gallery</span>
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#impact" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
-            <span class="relative z-10">Impact</span>
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <button class="donate-btn text-white px-8 py-3.5 rounded-full font-bold text-lg hover:shadow-xl transition-all transform hover:-translate-y-1 hover:bg-gradient-to-r from-purple-600 to-pink-600">
-            Donate Now
-        </button>
-    </div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izandla | Ziyagezana Charity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3a86ff',
+                        secondary: '#8338ec',
+                        accent: '#ff006e',
+                        dark: '#1a1a2e',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(58,134,255,0.9) 0%, rgba(131,56,236,0.9) 100%);
+        }
+        
+        .video-card:hover .play-icon {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        
+        .donate-btn {
+            background: linear-gradient(45deg, #ff006e, #8338ec);
+            box-shadow: 0 4px 15px rgba(255, 0, 110, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 110, 0.6);
+        }
+        
+        .impact-counter {
+            background: linear-gradient(135deg, rgba(58,134,255,0.1) 0%, rgba(131,56,236,0.1) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
     
-    <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-        <i class="fas fa-bars text-3xl" style="color: hotpink;"></i>
-    </button>
-</div>
 
-<!-- Mobile menu -->
-<div class="md:hidden hidden bg-white/90 backdrop-blur-md shadow-lg" id="mobile-menu">
-    <div class="px-4 pt-2 pb-8 space-y-4 flex flex-col">
-        <a href="#home" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
-            <span class="relative z-10">Home</span>
-            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#about" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
-            <span class="relative z-10">About</span>
-            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#programs" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
-            <span class="relative z-10">Programs</span>
-            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#gallery" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
-            <span class="relative z-10">Gallery</span>
-            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#impact" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
-            <span class="relative z-10">Impact</span>
-            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <button class="donate-btn text-white px-6 py-3 rounded-full font-semibold w-full mt-4 hover:bg-gradient-to-r from-purple-600 to-pink-600">
-            Donate Now
-        </button>
+
+<button id="donate-button" class="donate-btn text-white px-8 py-3.5 rounded-full font-bold text-lg hover:shadow-xl transition-all transform hover:-translate-y-1 hover:bg-gradient-to-r from-purple-600 to-pink-600">
+    Donate Now
+</button>
+
+<!-- Donation Modal (add this near bottom of body) -->
+<div id="donation-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full">
+        <h3 class="text-2xl font-bold mb-4">Make a Donation</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block mb-2">Amount (USD)</label>
+                <input type="number" id="donation-amount" class="w-full p-2 border rounded" placeholder="10.00" min="1" step="0.01">
+            </div>
+            <div>
+                <label class="block mb-2">Email (for receipt)</label>
+                <input type="email" id="donor-email" class="w-full p-2 border rounded" placeholder="your@email.com">
+            </div>
+            <div id="card-element" class="border rounded p-3"></div>
+            <div id="card-errors" class="text-red-500 text-sm"></div>
+            <button id="submit-donation" class="donate-btn text-white px-6 py-3 rounded-full font-semibold w-full">
+                Process Donation
+            </button>
+        </div>
     </div>
 </div>
+<script src="script.js">
+    require('dotenv').config();
+const express = require('express');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public'));
+
+// Create Payment Intent
+app.post('/create-payment-intent', async (req, res) => {
+    try {
+        const { amount, email } = req.body;
+
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount: amount,
+            currency: 'usd',
+            metadata: { donor_email: email },
+            description: 'Donation to Izandla Ziyagezana Charities'
+        });
+
+        res.json({ clientSecret: paymentIntent.client_secret });
+    } catch (err) {
+        console.error('Error creating payment intent:', err);
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Webhook for successful payments (optional but recommended)
+app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
+    const sig = req.headers['stripe-signature'];
+    let event;
+
+    try {
+        event = stripe.webhooks.constructEvent(
+            req.body,
+            sig,
+            process.env.STRIPE_WEBHOOK_SECRET
+        );
+    } catch (err) {
+        return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    // Handle successful payment
+    if (event.type === 'payment_intent.succeeded') {
+        const paymentIntent = event.data.object;
+        console.log('Donation succeeded:', paymentIntent.id);
+        // Here you could send a thank you email, update database, etc.
+    }
+
+    res.json({ received: true });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+</script>
+</body>
+</html>
