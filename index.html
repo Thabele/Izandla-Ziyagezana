@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izandla | Ziyagezana Charity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3a86ff',
+                        secondary: '#8338ec',
+                        accent: '#ff006e',
+                        dark: '#1a1a2e',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(58,134,255,0.9) 0%, rgba(131,56,236,0.9) 100%);
+        }
+        
+        .video-card:hover .play-icon {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        
+        .donate-btn {
+            background: linear-gradient(45deg, #ff006e, #8338ec);
+            box-shadow: 0 4px 15px rgba(255, 0, 110, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 110, 0.6);
+        }
+        
+        .impact-counter {
+            background: linear-gradient(135deg, rgba(58,134,255,0.1) 0%, rgba(131,56,236,0.1) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-dark">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/20 backdrop-blur-lg shadow-sm border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-28 items-center"> <!-- Increased height to h-28 -->
+                <!-- Business Name on Left -->
+                <div class="flex-1">
+                  
+<a href="#" class="flex items-center">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center shadow-lg border-2 border-white/30">
+                            <i class="fas fa-hands-helping text-white text-4xl"></i>
+                        </div>
+                    </a>
+
+                       
+                </div>
+                
+                <!-- Logo in Center (larger size) -->
+                <div class="flex-1">
+                    <h1><span class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-400 font-extrabold tracking-tight" 
+                    style="font-size: 1.8rem; text-shadow: 1px 1px 3px ;">
+                  Izandla Ziyagezana Charities
+              </span>
+          </h1>
+                </div>
+              <!-- Navigation Links on Right -->
+<div class="flex-1 flex justify-end">
+    <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
+            <span class="relative z-10">Home</span>
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#about" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
+            <span class="relative z-10">About</span>
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#programs" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
+            <span class="relative z-10">Programs</span>
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#gallery" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
+            <span class="relative z-10">Gallery</span>
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#impact" class="text-lg font-medium transition-all duration-300 transform hover:scale-105 relative group" style="color: hotpink;">
+            <span class="relative z-10">Impact</span>
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <button class="donate-btn text-white px-8 py-3.5 rounded-full font-bold text-lg hover:shadow-xl transition-all transform hover:-translate-y-1 hover:bg-gradient-to-r from-purple-600 to-pink-600">
+            Donate Now
+        </button>
+    </div>
+    
+    <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+        <i class="fas fa-bars text-3xl" style="color: hotpink;"></i>
+    </button>
+</div>
+
+<!-- Mobile menu -->
+<div class="md:hidden hidden bg-white/90 backdrop-blur-md shadow-lg" id="mobile-menu">
+    <div class="px-4 pt-2 pb-8 space-y-4 flex flex-col">
+        <a href="#home" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
+            <span class="relative z-10">Home</span>
+            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#about" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
+            <span class="relative z-10">About</span>
+            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#programs" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
+            <span class="relative z-10">Programs</span>
+            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#gallery" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
+            <span class="relative z-10">Gallery</span>
+            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#impact" class="text-lg font-medium transition-all duration-300 py-2 border-b border-gray-100 relative group" style="color: hotpink;">
+            <span class="relative z-10">Impact</span>
+            <span class="absolute bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <button class="donate-btn text-white px-6 py-3 rounded-full font-semibold w-full mt-4 hover:bg-gradient-to-r from-purple-600 to-pink-600">
+            Donate Now
+        </button>
+    </div>
+</div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <img src="chaimg/s3.jpg" 
+                 alt="Community help" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">Ending Poverty Through <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-400">Community Action</span></h1>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">We provide meals, clothing, and hope to thousands in need through our network of soup kitchens and community programs.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="donate-btn text-white px-8 py-4 rounded-full font-semibold text-lg">
+                            Donate Now <i class="fas fa-heart ml-2"></i>
+                        </button>
+                        <button class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="relative hidden md:block">
+                    <div class="relative floating">
+                        <img src="chaimg/smiley.avif" 
+                             alt="Happy child" class="rounded-2xl shadow-2xl w-full h-auto">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-primary/10 p-3 rounded-full">
+                                    <i class="fas fa-utensils text-primary text-2xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray-500">Meals served this month</p>
+                                    <p class="text-xl font-bold">24,892</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">WHO WE ARE</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Bringing Hope To Communities In Need</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="chaimg/dfood.jpg" 
+                         alt="Volunteers serving food" class="rounded-2xl shadow-xl w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg w-3/4">
+                        <h3 class="text-xl font-bold mb-2">Since 2010</h3>
+                        <p class="text-gray-600">We've been serving communities with dignity and compassion.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                    <p class="text-gray-600 mb-6"> At Izandla Ziyagezana Charities, we are dedicated to alleviating poverty through direct action programs that provide food, clothing, and essential services to those in need. We believe everyone deserves access to basic necessities and opportunities to improve their lives.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-full mr-4">
+                                <i class="fas fa-bread-slice text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Daily Meal Programs</h4>
+                                <p class="text-gray-600 text-sm">Operating 12 soup kitchens across the city serving nutritious meals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-full mr-4">
+                                <i class="fas fa-tshirt text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Clothing Distribution</h4>
+                                <p class="text-gray-600 text-sm">Providing warm clothing and blankets to homeless individuals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-accent/10 p-2 rounded-full mr-4">
+                                <i class="fas fa-hand-holding-heart text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Community Support</h4>
+                                <p class="text-gray-600 text-sm">Connecting people with social services, job training, and housing assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-8 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition">
+                        Learn More About Us <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">OUR PROGRAMS</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">How We Make A Difference</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="chaimg/s26.jpg" 
+                             alt="Food program" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-primary/10 text-primary w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-utensils text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Community Kitchens</h3>
+                        <p class="text-gray-600 mb-4">Daily meal service providing nutritious food to families and individuals in need across 12 locations.</p>
+                        <a href="#" class="text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="chaimg/blanket.avif" 
+                             alt="Clothing program" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-secondary/10 text-secondary w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-tshirt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Warmth Initiative</h3>
+                        <p class="text-gray-600 mb-4">Distributing warm clothing, blankets, and winter gear to protect against harsh weather conditions.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                             alt="Education program" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-accent/10 text-accent w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Pathways Out of Poverty</h3>
+                        <p class="text-gray-600 mb-4">Job training, education programs, and social services to help break the cycle of poverty.</p>
+                        <a href="#" class="text-accent font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">OUR WORK IN ACTION</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Video Gallery</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Video 1 -->
+                <div class="video-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <div class="play-icon bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fas fa-play text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-bold text-lg">Soup Kitchen Daily Operations</h3>
+                        <p class="text-white/80 text-sm mt-1">See how we prepare and serve meals to 500+ people daily</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <div class="play-icon bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fas fa-play text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-bold text-lg">Winter Clothing Drive 2025</h3>
+                        <p class="text-white/80 text-sm mt-1">Distributing coats and blankets to homeless communities</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <div class="play-icon bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fas fa-play text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-bold text-lg">Success Stories: From Homeless to Housed</h3>
+                        <p class="text-white/80 text-sm mt-1">Inspiring transformations through our programs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition inline-flex items-center">
+                    View All Videos <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-20 bg-gray-900 text-white parallax-bg" style="background-image: url('chaimg/team.avif')">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">OUR IMPACT</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Changing Lives Every Day</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="impact-counter p-6 rounded-xl text-center border border-white/10">
+                    <div class="text-4xl font-bold mb-2 text-primary">1.2M+</div>
+                    <p class="text-white/80">Meals Served</p>
+                </div>
+                
+                <div class="impact-counter p-6 rounded-xl text-center border border-white/10">
+                    <div class="text-4xl font-bold mb-2 text-secondary">45K+</div>
+                    <p class="text-white/80">People Clothed</p>
+                </div>
+                
+                <div class="impact-counter p-6 rounded-xl text-center border border-white/10">
+                    <div class="text-4xl font-bold mb-2 text-accent">2.3K+</div>
+                    <p class="text-white/80">Lives Transformed</p>
+                </div>
+                
+                <div class="impact-counter p-6 rounded-xl text-center border border-white/10">
+                    <div class="text-4xl font-bold mb-2 text-white">850+</div>
+                    <p class="text-white/80">Dedicated Volunteers</p>
+                </div>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Your Support Makes This Possible</h3>
+                        <p class="text-white/90 mb-6">Every donation, no matter the size, helps us provide essential services to those in need. Join us in our mission to alleviate poverty and restore dignity to vulnerable communities.</p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button class="donate-btn text-white px-8 py-4 rounded-full font-semibold text-lg">
+                                Donate Now <i class="fas fa-heart ml-2"></i>
+                            </button>
+                            <button class="bg-white text-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition">
+                                Volunteer <i class="fas fa-hands-helping ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="bg-primary/20 rounded-xl p-6">
+                            <div class="flex items-start mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-semibold">Sarah Johnson</p>
+                                    <p class="text-sm text-white/70">Monthly Donor Since 2018</p>
+                                </div>
+                            </div>
+                            <p class="italic text-white/90">"Knowing my monthly donation provides 50 meals to people in need gives me so much joy. Izandla Ziyagezana Charities makes it easy to see exactly how my contribution is making a difference."</p>
+                            <div class="flex mt-4">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -right-6 bg-accent text-white p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt text-2xl mr-2"></i>
+                                <div>
+                                    <p class="text-xs font-semibold">TRUSTED CHARITY</p>
+                                    <p class="text-sm">4.9/5 Stars</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">GET INVOLVED</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Join Our Mission</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Our Headquarters</h4>
+                                <p class="text-gray-600">118 High Street, Turffontein, JHB 2190</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">(011) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-accent/10 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">info@izandlaziyagezana.org</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-semibold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition w-full">
+                                    Send Message <i class="fas fa-paper-plane ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <h3 class="text-2xl font-bold mb-2">Stay Updated</h3>
+                <p class="text-gray-600 mb-6">Subscribe to our newsletter to receive updates on our programs and impact.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition whitespace-nowrap">
+                        Subscribe <i class="fas fa-envelope-open-text ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-hands-helping text-white text-xl"></i>
+                        </div>
+<!-- Business Name on Left -->
+<div class="flex-1">
+    <h1>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-400 font-extrabold tracking-tight" 
+              style="font-size: 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">
+            Izandla Ziyagezana
+        </span>
+    </h1>
+</div>                    </a>
+                    <p class="text-gray-400">Bringing hope and essential services to communities in need since 2010.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition">Programs</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Our Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Community Kitchens</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Warmth Initiative</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pathways Out of Poverty</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Emergency Relief</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Volunteer Programs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Financial Reports</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">501(c)(3) Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2025 Izandla Ziyagezana. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-cc-visa text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-cc-mastercard text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-cc-paypal text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-cc-apple-pay text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden" id="donation-modal">
+        <div class="bg-white rounded-2xl max-w-md w-full mx-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-primary to-secondary p-6 text-white">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold">Make a Donation</h3>
+                    <button id="close-modal" class="text-white hover:text-gray-200">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p class="text-white/90 mt-1">Your contribution makes a real difference</p>
+            </div>
+            
+            <div class="p-6">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Donation Amount</label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button class="donation-amount-btn border border-gray-300 py-2 rounded-lg hover:bg-primary hover:text-white transition">$25</button>
+                            <button class="donation-amount-btn border border-gray-300 py-2 rounded-lg hover:bg-primary hover:text-white transition">$50</button>
+                            <button class="donation-amount-btn border border-gray-300 py-2 rounded-lg hover:bg-primary hover:text-white transition">$100</button>
+                            <button class="donation-amount-btn border border-gray-300 py-2 rounded-lg hover:bg-primary hover:text-white transition">$250</button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Custom Amount</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                            <input type="number" placeholder="Other amount" class="w-full pl-8 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Donation Frequency</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button class="frequency-btn bg-primary text-white py-2 rounded-lg">One-time</button>
+                            <button class="frequency-btn border border-gray-300 py-2 rounded-lg hover:bg-gray-100 transition">Monthly</button>
+                            <button class="frequency-btn border border-gray-300 py-2 rounded-lg hover:bg-gray-100 transition">Yearly</button>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button class="donate-btn text-white px-6 py-3 rounded-full font-semibold w-full">
+                            Continue to Payment <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Donation modal
+        const donateButtons = document.querySelectorAll('.donate-btn:not(#close-modal)');
+        const donationModal = document.getElementById('donation-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        donateButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                donationModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            donationModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Donation amount buttons
+        const amountButtons = document.querySelectorAll('.donation-amount-btn');
+        amountButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                amountButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('border-gray-300');
+                });
+                button.classList.add('bg-primary', 'text-white');
+                button.classList.remove('border-gray-300');
+            });
+        });
+        
+        // Frequency buttons
+        const frequencyButtons = document.querySelectorAll('.frequency-btn');
+        frequencyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                frequencyButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('border-gray-300');
+                });
+                button.classList.add('bg-primary', 'text-white');
+                button.classList.remove('border-gray-300');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.video-card, .impact-counter').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

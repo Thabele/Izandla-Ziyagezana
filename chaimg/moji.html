@@ -1,0 +1,194 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <title>Moji</title>
+
+<style>
+    /* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* === HERO IMAGE SLIDER === */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.slider {
+  display: flex;
+  width: 400%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background-color: #f39c12;
+}
+
+/* === DYNAMIC BUTTONS === */
+.dynamic-button {
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dynamic-button:hover {
+  background-color: #ff9c3f;
+  transform: scale(1.05);
+}
+
+/* === EMOJI REACTIONS === */
+.emoji-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.emoji-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.emoji-button:hover {
+  transform: scale(1.2);
+}
+
+/* === RESPONSIVENESS === */
+@media screen and (max-width: 768px) {
+  .hero-slider {
+    height: 350px;
+  }
+  .slide {
+    height: 350px;
+  }
+}
+
+</style>
+</head>
+<body>
+    <section class="hero-slider">
+        <div class="slider">
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="icon facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="icon twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="icon instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="icon linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank" class="icon whatsapp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+        </section>
+    </div>
+    <div class="buttons">
+    <ul class="btn-links" id="btn-links">
+      <li><button class="btn"><a href="wine.html">Wine Boxes</a></button></li>
+      <li><button class="btn"><a href="about.html">Jewellery</a></button></li>
+      <li><button class="btn"><a href="#earings.html">Earings</a></button></li>
+      <li><button class="btn"></b><a href="contact.html">Contact</a></button></li>
+      <li><button class="btn"><a href="wine.html">Gift Boxes</a></button></li>
+      <li><button class="btn"><a href="new">What`s New?</a></button></li>
+      <li><button class="btn"></b><a href="contact.html">Contact</a></button></li>
+      <li><button class="btn"><a href="shop">Gift Boxes</a></button></li>
+    </ul>
+    </div>
+    <!-- Product Block -->
+    <div class="product">
+        <img src="images25/herat.jpeg" alt="Product 1">
+        <h3>Leather Wallet</h3>
+        <p>R25.99</p>
+        <button>Add to Cart</button>
+        <p>Available on select products!</p>
+        <div class="emoji-buttons">
+         <div class="emoji-button like-button">👍 <span class="like-count">0</span></div>
+         <div class="emoji-button love-button">❤️ <span class="love-count">0</span></div>
+       </div>
+      </div>
+      <div class="product">
+        <img src="images25/hold.jpeg" alt="Product 2">
+        <h3>Wooden Keychain</h3>
+        <p>R12.49</p>
+        <button>Add to Cart</button>
+        <p>Limited time only!</p>
+        <div class="emoji-buttons">
+         <div class="emoji-button like-button">👍 <span class="like-count">0</span></div>
+         <div class="emoji-button love-button">❤️ <span class="love-count">0</span></div>
+       </div>
+      </div>
+      <div class="product">
+        <img src="images25/3.jpeg" alt="Product 3">
+        <h3>Acrylic Trophy</h3>
+        <p>R35.99</p>
+        <button>Add to Cart</button>
+        <div class="emoji-buttons">
+         <div class="emoji-button like-button">👍 <span class="like-count">0</span></div>
+         <div class="emoji-button love-button">❤️ <span class="love-count">0</span></div>
+       </div>
+      </div>
+      <div class="product">
+        <img src="images25/holde.png" alt="Product 4">
+        <h3>Sublimation Mug</h3>
+        <p>R15.99</p>
+        <button>Add to Cart</button>
+        <div class="emoji-buttons">
+         <div class="emoji-button like-button">👍 <span class="like-count">0</span></div>
+         <div class="emoji-button love-button">❤️ <span class="love-count">0</span></div>
+       </div>
+      </div>
+      
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

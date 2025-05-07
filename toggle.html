@@ -1,0 +1,74 @@
+<style>
+    .nav-links {
+  display: flex;
+  transition: 0.3s all ease;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #ffffff;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+}
+/* Add these to prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
+nav {
+  position: relative;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+</style>
+<body>
+    <nav>
+        <div class="nav-header">
+          <button class="home" id="dynamic-button">
+            <a href="index.html" alt="Home">
+              <div class="logo">
+                <img src="/images25/logo.jpeg">
+              </div>
+            </a>
+          </button>
+          <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+        
+        <ul class="nav-links" id="nav-links">
+          <li><button class="dynamic-button"><a href="index.html">Home</a></button></li>
+          <li><button class="dynamic-button"><a href="about.html">About</a></button></li>
+          <li><button class="dynamic-button"><a href="contact.html">Contact</a></button></li>
+          <li><button class="dynamic-button"><a href="new.html">Whats New?</a></button></li>
+        </ul>
+      </nav>
+      
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    toggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+  });
+});
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxLaser | Premium Laser Engraving Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .font-montserrat { font-family: 'Montserrat', sans-serif; }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .marquee {
+      animation: marquee 30s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .video-thumbnail::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    .video-thumbnail:hover::after {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="font-montserrat bg-gray-50 text-gray-800">
+  <!-- Announcement Bar -->
+  <div class="bg-amber-600 text-white py-2 px-4 text-sm font-medium">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="marquee whitespace-nowrap overflow-hidden">
+        <span class="inline-block mr-8">🔥 Limited-Time Offer: Get 15% Off Engraved Gifts Today Only!</span>
+        <span class="inline-block mr-8">🎁 Personalized = Unforgettable: Customize Your Gift in Minutes!</span>
+        <span class="inline-block mr-8">⏳ Last Chance: Book Your Christmas Orders Before We're Booked Out!</span>
+        <span class="inline-block">💬 "The perfect gift isn't bought—it's made just for you."</span>
+      </div>
+      <div class="hidden md:flex space-x-4">
+        <a href="tel:0672734086" class="flex items-center">
+          <i class="fas fa-phone-alt mr-1"></i> 067 273 4086
+        </a>
+        <a href="https://wa.me/27672734086" class="flex items-center">
+          <i class="fab fa-whatsapp mr-1"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <img src="images/logo.jpeg" alt="LuxLaser" class="h-12">
+            <span class="ml-3 text-2xl font-bold text-gray-900 font-playfair">Laser<span class="text-amber-600">Engraving</span>Store</span>
+          </div>
+          <div class="hidden lg:block ml-10">
+            <div class="flex space-x-8">
+              <a href="index.html" class="text-gray-900 font-medium hover:text-amber-600">Home</a>
+              <a href="about.html" class="text-gray-700 font-medium hover:text-amber-600">About</a>
+              <a href="services.html" class="text-gray-700 font-medium hover:text-amber-600">Services</a>
+              <div class="relative group">
+                <button class="text-gray-700 font-medium hover:text-amber-600 flex items-center">
+                  Products <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-4 w-64 z-10">
+                  <a href="acrylic.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Acrylic Engraving</a>
+                  <a href="wood.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Wood Engraving</a>
+                  <a href="leather.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Leather Engraving</a>
+                  <a href="gifts.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Personalized Gifts</a>
+                </div>
+              </div>
+              <a href="contact.html" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:flex items-center space-x-4">
+          <a href="#" class="text-gray-700 hover:text-amber-600">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-gray-700 hover:text-amber-600">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-700 hover:text-amber-600">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <div class="-mr-2 flex lg:hidden">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-amber-600 focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">About</a>
+        <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Services</a>
+        <div>
+          <button class="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">
+            Products <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="pl-4 space-y-1">
+            <a href="acrylic.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Acrylic Engraving</a>
+            <a href="wood.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Wood Engraving</a>
+            <a href="leather.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Leather Engraving</a>
+            <a href="gifts.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Personalized Gifts</a>
+          </div>
+        </div>
+        <a href="contact.html" class="block w-full bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-base font-medium text-center">Contact</a>
+      </div>
+      <div class="pt-4 pb-3 border-t border-gray-200">
+        <div class="flex items-center px-5 space-x-3">
+          <a href="#" class="text-gray-700 hover:text-amber-600">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-gray-700 hover:text-amber-600">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-700 hover:text-amber-600">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://wa.me/27672734086" class="text-gray-700 hover:text-amber-600">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient text-white relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="images/fam.png" alt="Laser Engraving" class="w-full h-full object-cover opacity-30">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+      <div class="lg:w-1/2">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair">Premium<span class="text-amber-400"> Laser Engravings</span> Services<span class="text-amber-400"></span></h1>
+        <p class="text-xl text-gray-300 mb-8">Bring Your Item, We'll Add the Magic. Just Like We Did for 5,000+ Happy Customers!</p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="order.html" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-md font-medium text-center transition duration-300">
+            Order Now
+          </a>
+          <a href="quote.html" class="bg-transparent hover:bg-white hover:text-gray-900 text-white border border-white px-8 py-3 rounded-md font-medium text-center transition duration-300">
+            Get a Quote
+          </a>
+        </div>
+        <div class="mt-8 flex items-center">
+          <div class="flex -space-x-2">
+            <img class="h-10 w-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer">
+            <img class="h-10 w-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Customer">
+            <img class="h-10 w-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer">
+          </div>
+          <div class="ml-4">
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-sm text-gray-300">Rated 5/5 by 500+ customers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 font-playfair">Trending <span class="text-amber-600">Engravings</span></h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our most popular personalized items loved by customers</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Product 1 -->
+        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+          <div class="relative">
+            <img class="w-full h-64 object-cover" src="images/acrylic1.jpeg" alt="Acrylic Engraving">
+            <div class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
+              <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Acrylic Plaque</h3>
+            <p class="text-gray-600 mb-4">Elegant acrylic with precision laser engraving</p>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-amber-600">R250</span>
+              <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+          <div class="relative">
+            <img class="w-full h-64 object-cover" src="images/Tray.jpeg" alt="Wooden Tray">
+            <div class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
+              <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Personalized Wooden Tray</h3>
+            <p class="text-gray-600 mb-4">Handcrafted wooden serving tray with custom engraving</p>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-amber-600">R380</span>
+              <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+          <div class="relative">
+            <img class="w-full h-64 object-cover" src="images/mr&mrs.png" alt="Mr & Mrs Engraving">
+            <div class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
+              <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Mr & Mrs Wood Sign</h3>
+            <p class="text-gray-600 mb-4">Perfect wedding gift with personalized names</p>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-amber-600">R420</span>
+              <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+          <div class="relative">
+            <img class="w-full h-64 object-cover" src="images/puzzle.jpg" alt="Personalized Puzzle">
+            <div class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
+              <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Photo Puzzle</h3>
+            <p class="text-gray-600 mb-4">Unique gift with your special photo</p>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-amber-600">R290</span>
+              <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="products.html" class="inline-flex items-center text-amber-600 hover:text-amber-800 font-medium">
+          View All Products <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 font-playfair">Our <span class="text-amber-600">Laser Work</span></h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">See examples of our precision engraving craftsmanship</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Gallery Item 1 -->
+        <div class="relative group overflow-hidden rounded-lg shadow-md">
+          <img src="images/boxx.jpeg" alt="Engraved Box" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+            <button class="bg-white text-amber-600 px-6 py-2 rounded-full font-medium">View Details</button>
+          </div>
+        </div>
+        
+        <!-- Gallery Item 2 -->
+        <div class="relative group overflow-hidden rounded-lg shadow-md">
+          <img src="images/fam.png" alt="Family Portrait" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+            <button class="bg-white text-amber-600 px-6 py-2 rounded-full font-medium">View Details</button>
+          </div>
+        </div>
+        
+        <!-- Gallery Item 3 -->
+        <div class="relative group overflow-hidden rounded-lg shadow-md">
+          <img src="images/afro.jpg" alt="Portrait Engraving" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+            <button class="bg-white text-amber-600 px-6 py-2 rounded-full font-medium">View Details</button>
+          </div>
+        </div>
+        
+        <!-- Gallery Item 4 -->
+        <div class="relative group overflow-hidden rounded-lg shadow-md">
+          <img src="images/anna.png" alt="Custom Engraving" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+            <button class="bg-white text-amber-600 px-6 py-2 rounded-full font-medium">View Details</button>
+          </div>
+        </div>
+        
+        <!-- Gallery Item 5 -->
+        <div class="relative group overflow-hidden rounded-lg shadow-md">
+          <img src="images/mr.png" alt="Mr & Mrs Engraving" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+            <button class="bg-white text-amber-600 px-6 py-2 rounded-full font-medium">View Details</button>
+          </div>
+        </div>
+        
+        <!-- Gallery Item 6 -->
+        <div class="relative group overflow-hidden rounded-lg shadow-md">
+          <img src="images/logo.jpeg" alt="Laser Engraving" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+            <button class="bg-white text-amber-600 px-6 py-2 rounded-full font-medium">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Videos -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 font-playfair">How <span class="text-amber-600">It Works</span></h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">See our laser engraving process in action</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Video 1 -->
+        <div class="video-thumbnail relative rounded-lg overflow-hidden shadow-md">
+          <video class="w-full h-auto" poster="vid/VID-20241129-WA0061.mp4" muted loop playsinline>
+            <source src="VID_20241108_164815.mp4" type="video/mp4">
+          </video>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="play-button bg-amber-600 hover:bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center">
+              <i class="fas fa-play text-xl"></i>
+            </button>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Wood Engraving Process</h3>
+          </div>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="video-thumbnail relative rounded-lg overflow-hidden shadow-md">
+          <video class="w-full h-auto" poster="images/video-thumb-2.jpg" muted loop playsinline>
+            <source src="vid/VID_20241108_164815.mp4" type="video/mp4">
+          </video>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="play-button bg-amber-600 hover:bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center">
+              <i class="fas fa-play text-xl"></i>
+            </button>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Acrylic Cutting & Engraving</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4 font-playfair">What <span class="text-amber-400">Clients Say</span></h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-800 p-8 rounded-lg">
+          <div class="flex items-center mb-4">
+            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K.">
+            <div class="ml-4">
+              <h4 class="font-medium">Sarah K.</h4>
+              <div class="flex text-yellow-400 mt-1">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"The engraved wooden sign I ordered was absolutely perfect! The attention to detail was incredible and it arrived faster than expected. Will definitely order again!"</p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-800 p-8 rounded-lg">
+          <div class="flex items-center mb-4">
+            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael T.">
+            <div class="ml-4">
+              <h4 class="font-medium">Michael T.</h4>
+              <div class="flex text-yellow-400 mt-1">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"I needed custom engraved awards for our company event and LuxLaser delivered beyond expectations. The quality was outstanding and the team was so helpful throughout the process."</p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-800 p-8 rounded-lg">
+          <div class="flex items-center mb-4">
+            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer L.">
+            <div class="ml-4">
+              <h4 class="font-medium">Jennifer L.</h4>
+              <div class="flex text-yellow-400 mt-1">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"The personalized puzzle with my dog's photo was the perfect gift for my husband's birthday. The image came out crystal clear and the puzzle pieces fit perfectly. Highly recommend!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-amber-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 font-playfair">Ready to Create Something <span class="text-gray-900">Unique?</span></h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">Upload your design or consult with our experts to bring your vision to life</p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a href="order.html" class="bg-white hover:bg-gray-100 text-amber-600 px-8 py-3 rounded-md font-medium transition duration-300">
+          Order Now
+        </a>
+        <a href="quote.html" class="bg-transparent hover:bg-gray-900 text-white border border-white px-8 py-3 rounded-md font-medium transition duration-300">
+          Get a Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-6 font-playfair">Lux<span class="text-amber-400">Laser</span></h3>
+          <p class="mb-4">Precision Engraving, Lasting Impressions</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-white">Our Services</a></li>
+            <li><a href="portfolio.html" class="text-gray-400 hover:text-white">Portfolio</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Our Products</h4>
+          <ul class="space-y-3">
+            <li><a href="leather.html" class="text-gray-400 hover:text-white">Leather Engraving</a></li>
+            <li><a href="wood.html" class="text-gray-400 hover:text-white">Wood Engraving</a></li>
+            <li><a href="acrylic.html" class="text-gray-400 hover:text-white">Acrylic Pieces</a></li>
+            <li><a href="gifts.html" class="text-gray-400 hover:text-white">Personalized Gifts</a></li>
+            <li><a href="corporate.html" class="text-gray-400 hover:text-white">Corporate Gifts</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Contact Us</h4>
+          <ul class="footer-contact space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+              <span>118 High Street, Turffontein<br>Johannesburg, SA 2190</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone-alt mr-3"></i>
+              <a href="tel:0672734086">067 273 4086</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-3"></i>
+              <a href="mailto:quote@selahlainvestment.co.za">quote@selahlainvestment.co.za</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-clock mr-3"></i>
+              <span>Mon-Fri: 9AM - 5PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="mb-4 md:mb-0">© <span id="current-year"></span> LuxLaser Engravings. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="privacy.html" class="text-sm text-gray-400 hover:text-white">Privacy Policy</a>
+          <a href="terms.html" class="text-sm text-gray-400 hover:text-white">Terms of Service</a>
+          <a href="shipping.html" class="text-sm text-gray-400 hover:text-white">Shipping Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <div class="fixed bottom-8 right-8 z-50">
+    <a href="https://wa.me/27672734086" class="bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition duration-300">
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Video play buttons
+    document.querySelectorAll
+    </script>
